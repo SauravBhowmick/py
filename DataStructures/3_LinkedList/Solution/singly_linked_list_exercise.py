@@ -9,15 +9,15 @@ class LinkedList:
 
     def print(self):
         if self.head is None:
-            print("Linked list is empty")
+            print("Linked List is empty")
             return
-
-        itr = self.head
-        llstr = ''
-        while itr:
-            llstr += str(itr.data) + ' --> '
-            itr = itr.next
-        print(llstr)
+        
+        curr = self.head
+        llstr = ""
+        while curr:
+            llstr += str(curr.data) + " --> "
+            curr = curr.next
+        print(llstr + "None")
 
     def get_length(self):
         count = 0
