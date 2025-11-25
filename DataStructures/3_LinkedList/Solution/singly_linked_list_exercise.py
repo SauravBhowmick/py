@@ -105,18 +105,22 @@ class LinkedList:
 
     def remove_by_value(self, data):
         if self.head is None:
-            return
-
+            raise Exception("Linked List is empty")
+        
         if self.head.data == data:
             self.head = self.head.next
             return
+        
+        prev = self.head
+        curr = self.head.next
 
-        itr = self.head
-        while itr.next:
-            if itr.next.data == data:
-                itr.next = itr.next.next
-                break
-            itr = itr.next
+        while curr:
+            if curr.data == data:
+                prev.next = curr.next
+                return
+            prev = curr
+            curr = curr.next
+        print(f"{data} not found in the linked list")
 
 if __name__ == '__main__':
     ll = LinkedList()
